@@ -5,35 +5,47 @@
       <div>数智通</div>
     </div>
     <div class="header-nav">
-      <div v-for="item in navList" :key="item.id">{{ item.name }}</div>
+      <div v-for="item in navList" :key="item.id" @click="scrollTo(item.id)">{{ item.name }}</div>
     </div>
   </div>
 </template>
 
 <script setup>
-import { onMounted, ref } from 'vue';
+import { onMounted, onUnmounted, ref } from 'vue';
 
 const navList = [
   {name: '首页', id: 'home'},
   {name: '关于我们', id: 'about'},
+  {name: '高级保护', id: 'protect'},
   {name: '价格', id: 'pricing'},
-  {name: '联系我们', id: 'contact'},
+  // {name: '联系我们', id: 'contact'},
 ]
 
 const showBgColor = ref(false)
 
-const handleScroll = (() => {
-  const scrollPosition = window.scrollY
-  if(scrollPosition > 30) {
-    showBgColor.value = true
-  } else {
-    showBgColor.value = false
+const handleScroll = () => {
+  requestAnimationFrame(() => {
+    const scrollPosition = window.scrollY
+    showBgColor.value = scrollPosition > 30
+  })
+}
+
+const scrollTo = (targetId) => {
+  const element = document.getElementById(targetId)
+  if (element) {
+    element.scrollIntoView({ 
+      behavior: 'smooth', // 平滑滚动
+      block: 'start'      // 对齐到视口顶部
+    })
   }
-  console.log(scrollPosition)
-})
+}
 
 onMounted(() => {
   window.addEventListener('scroll', handleScroll)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', handleScroll)
 })
 </script>
 

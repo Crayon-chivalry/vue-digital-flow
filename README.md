@@ -1,19 +1,5 @@
-# vue-digital-flow
+# vue-digital-flow 数智通
 
-## Project setup
-```
-npm install
-```
+![image](https://github.com/Crayon-chivalry/vue3-element-admin/blob/main/src/assets/git-banner.png)
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+![image](https://github.com/Crayon-chivalry/vue3-element-admin/blob/main/src/assets/git-banner2.png)

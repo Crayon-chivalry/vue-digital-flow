@@ -3,15 +3,15 @@
     <!-- 顶部导航栏 -->
     <app-header />
     <!-- 欢迎 封面 部分 -->
-    <hero-section />
+    <hero-section id="home" />
     <!-- 软件解决方案 -->
-    <solution />
+    <solution id="about" />
     <!-- 保护 -->
-    <protection />
+    <protection id="protect" />
     <!-- 客户评价 -->
     <testimonials />
     <!-- 定价方案 -->
-    <pricing />
+    <pricing id="pricing" />
     <!-- 免费试用 -->
     <free-trial />
     <!-- 最新新闻 -->
